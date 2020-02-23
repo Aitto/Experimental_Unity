@@ -26,12 +26,22 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position+= m_forward*Time.deltaTime*m_speed;
+        //this.transform.position+= m_forward*Time.deltaTime*m_speed;
         //m_car.AddForce(m_forward*Time.deltaTime*m_speed);
         HandleInput();
     }
 
     private void HandleInput()
+    {
+        
+        AccelerateCar();
+        //RotateCar();
+        DebugCode();
+        CapSpeed();
+
+    }
+
+    private void AccelerateCar()
     {
         if( Input.GetKey(KeyCode.W))
         {
@@ -43,6 +53,10 @@ public class CarController : MonoBehaviour
             m_speed-=m_deceleration*Time.deltaTime;
             if( m_speed < -m_maxSpeed) m_speed = -m_maxSpeed;
         }
+    }
+
+    private void RotateCar()
+    {
         if( Input.GetKey(KeyCode.A))
         {
             //Rotate wrt (0,1,0) -m_rotation*Time.deltatiel angle
@@ -61,15 +75,13 @@ public class CarController : MonoBehaviour
             m_forward.Normalize();
             //Calculate left vector
             m_right = Vector3.Cross(m_up,m_forward);
-        m_right.Normalize();
+            m_right.Normalize();
         }
-        if(Input.GetKey(KeyCode.X))
-        {
-            Debug.Log("Forward: "+m_forward);
-            Debug.Log("Right: "+m_right);
-            Debug.Log("Up: "+m_up);
-        }
-        if(!Input.anyKey)
+    }
+    private void CapSpeed()
+    {
+        //Descelerate when W or S is not pressed
+        if(!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
         {
             if(m_speed>0)
             {
@@ -82,6 +94,21 @@ public class CarController : MonoBehaviour
                 if(m_speed > 0) m_speed=0.0f;
             }
         }
+        
+    }
 
+    private void DebugCode()
+    {
+        if(Input.GetKey(KeyCode.X))
+        {
+            Debug.Log("Forward: "+m_forward);
+            Debug.Log("Right: "+m_right);
+            Debug.Log("Up: "+m_up);
+        }
+    }
+    
+    public float GetCarVelocity()
+    {
+        return m_speed;
     }
 }
