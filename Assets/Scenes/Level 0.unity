@@ -141,6 +141,8 @@ MonoBehaviour:
   cc: {fileID: 200023785}
   m_frontTiers: []
   m_maxRotate: 0
+  m_rotate: 0
+  target: 30
 --- !u!114 &200023785 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 503376660, guid: 696cb2d7d1a49c6489986350358f0f89,
@@ -536,6 +538,8 @@ MonoBehaviour:
   - {fileID: 628555838}
   - {fileID: 761939857}
   m_maxRotate: 35
+  m_rotate: 0
+  target: 30
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,6 +746,8 @@ MonoBehaviour:
   - {fileID: 761939857}
   - {fileID: 628555838}
   m_maxRotate: 0
+  m_rotate: 0
+  target: 30
 --- !u!54 &761939862
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -959,7 +965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &963194226
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1018,8 +1024,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: -0.07469641, y: -0.66674066, z: 0.06744461, w: -0.73846376}
+  m_LocalPosition: {x: -5.833435, y: 2.2828598, z: 0.12524414}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1046,6 +1052,8 @@ MonoBehaviour:
   cc: {fileID: 200023785}
   m_frontTiers: []
   m_maxRotate: 0
+  m_rotate: 0
+  target: 30
 --- !u!1 &1188681961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,6 +1497,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 973137518, guid: 696cb2d7d1a49c6489986350358f0f89, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 696cb2d7d1a49c6489986350358f0f89, type: 3}
